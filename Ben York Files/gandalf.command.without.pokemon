@@ -1,0 +1,6 @@
+awk '!/culture/' ~/.bash_profile > ~/.bash_profile_2
+mv ~/.bash_profile_2 ~/.bash_profile
+echo "source ~/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/Week1/Day3/culture.sh" >> ~/.bash_profile
+source ~/.bash_profile
+history -c
+killall Terminal
