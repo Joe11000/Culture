@@ -1,0 +1,6 @@
+clear
+tput cup 15 25 
+echo "Clean up your crap before you leave"
+tput cup 0 0
+osascript -e "set Volume 10"
+say  "Clean up your crap before you leave" &
