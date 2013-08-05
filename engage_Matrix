@@ -1,4 +1,4 @@
-# apply Clean_Up culture to terminal
+# This appends my setting to the ~/.bash_profile
 
 cat  /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/.legacy/Matrix >> ~/.bash_profile 
 

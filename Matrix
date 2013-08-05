@@ -36,7 +36,7 @@ Matrix()
 
             tput cup 10 25
             echo "Follow The White Rabbit."
-            sleep 3s
+            sleep 2s
             clear
       fi
   fi
