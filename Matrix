@@ -1,0 +1,45 @@
+Matrix() 
+{
+  r=`expr $RANDOM % 50`
+
+  if [ $r -eq 1 ]; then
+
+      path=`pwd`
+      echo $path | grep -Eiq ".*DBC-Chicago/.*/.+"
+
+      if [ $? == 0 ];then
+            clear
+            tput cup 10 25 
+            name=$(echo $path | cut -d / -f 7)
+            osascript -e "set Volume 10"
+            echo "The Matrix Has you, $name" 
+            say "The Matrix Has you, $name" 
+            sleep 1s
+
+            clear
+
+            tput cup 10 35
+            echo "."
+            sleep 1s
+
+            clear
+
+            tput cup 10 35
+            echo ". ."
+            sleep 1s
+
+            clear
+
+            tput cup 10 35
+            echo ". . ."
+            sleep 1s
+
+            tput cup 10 25
+            echo "Follow The White Rabbit."
+            sleep 3s
+            clear
+      fi
+  fi
+}
+
+alias cd='Matrix; cd'
