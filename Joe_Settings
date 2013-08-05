@@ -1,0 +1,19 @@
+sg()
+{
+  ps -A | grep -E ".*shotgun.*" | xargs kill
+  shotgun
+}
+
+reset()
+{
+  bundle exec rake db:drop
+  bundle exec rake db:create
+  bundle exec rake db:migrate
+  bundle exec rake db:seed
+}
+
+alias joe="cd ~/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/"
+alias c="cd /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/Phase2/Grasshopper/PracticingActiveRecord" 
+alias ls='ls -FGh'
+
+alias cd='pwd; cd'

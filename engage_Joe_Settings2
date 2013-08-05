@@ -1,0 +1,9 @@
+echo "CleanUp(){" >> ~/.bash_profile 
+
+cat  /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/.legacy/CleanUp >> ~/.bash_profile 
+
+echo "}"  >> ~/.bash_profile 
+
+source ~/.bash_profile
+
+alias cd="echo mwahahahal; CleanUp; cd" 
