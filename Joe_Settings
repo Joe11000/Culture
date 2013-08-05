@@ -1,3 +1,4 @@
+
 sg()
 {
   ps -A | grep -E ".*shotgun.*" | xargs kill
@@ -12,8 +13,22 @@ reset()
   bundle exec rake db:seed
 }
 
+sinatra()
+{
+  wget "http://cl.ly/2n3D2V0R0L2f/download/sinatra_skeleton.zip"
+  unzip sinatra_skeleton.zip -d ./$@
+  rm sinatra_skeleton.zip
+  cd ./$@
+  git init
+  git add .
+  git commit -am "sinatra skeleton --b"
+}
+
+fws()
+{
+  grep -rEil $1 $2
+}
+
 alias joe="cd ~/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/"
 alias c="cd /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/Phase2/Grasshopper/PracticingActiveRecord" 
 alias ls='ls -FGh'
-
-alias cd='pwd; cd'

@@ -1,3 +1,7 @@
+# This appends my setting to the ~/.bash_profile
+
 cat  /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/.legacy/Joe_Settings >> ~/.bash_profile 
 
 source ~/.bash_profile
+
+
