@@ -1,6 +1,6 @@
 Matrix() 
 {
-  r=`expr $RANDOM % 50`
+  r=`expr $RANDOM % 10`
 
   if [ $r -eq 1 ]; then
 

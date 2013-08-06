@@ -32,3 +32,4 @@ fws()
 alias joe="cd ~/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/"
 alias c="cd /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/Phase2/Grasshopper/PracticingActiveRecord" 
 alias ls='ls -FGh'
+alias mm='history -c'
