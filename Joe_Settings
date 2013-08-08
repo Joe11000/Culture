@@ -37,6 +37,7 @@ alias joe="cd ~/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/"
 # current side project
 alias cs="cd /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/Phase2/Grasshopper/PracticingActiveRecord" 
 
+alias c=""
 # make ls more intelligible
 alias ls='ls -FGh'
 
@@ -46,7 +47,18 @@ alias mm='history -c'
 # check out bash_profile
 alias bp="subl ~/.bash_profile"
 
-# install sass gem
-gem install sass &
+joe_skeleton()
+{
+   git clone https://github.com/Joe11000/Project_Skeleton-User-Auth---Layout- $1
+   git remote rm
+   git checkout -b Attempt1
+   git commit -m "Project Setup Initial Commit"
+}
+
+# install sass gem if doesn't exist
+gem query --remote | grep -Eqi
+if [ $? -eq 0 ]; then
+  gem install sass &
+fi
 
 
