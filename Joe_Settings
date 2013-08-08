@@ -47,12 +47,17 @@ alias mm='history -c'
 # check out bash_profile
 alias bp="subl ~/.bash_profile"
 
+#FINISH THIS ONE!!!!!!!!!!
+# needs 2 params joe_skeleton(project_name, branch_name, remote_repository destination)
 joe_skeleton()
 {
    git clone https://github.com/Joe11000/Project_Skeleton-User-Auth---Layout- $1
-   git remote rm
-   git checkout -b Attempt1
+   cd $1
+   git remote set-url origin $3
+   git checkout -b $2
    git commit -m "Project Setup Initial Commit"
+   git remote rm
+
 }
 
 # install sass gem if doesn't exist
