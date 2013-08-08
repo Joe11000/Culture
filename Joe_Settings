@@ -1,10 +1,11 @@
-
+# find all processes with 'shotgun' in the name and kill them. Start up shotgun 
 sg()
 {
   ps -A | grep -E ".*shotgun.*" | xargs kill
   shotgun
 }
 
+# Drop, Create, Migrate, and Seed your Sinatra project
 reset()
 {
   bundle exec rake db:drop
@@ -13,6 +14,7 @@ reset()
   bundle exec rake db:seed
 }
 
+# download and setup basic sinatra skeleton
 sinatra()
 {
   wget "http://cl.ly/2n3D2V0R0L2f/download/sinatra_skeleton.zip"
@@ -24,12 +26,27 @@ sinatra()
   git commit -am "sinatra skeleton --b"
 }
 
+# search all files recursively starting from $2 and search for string $1. Case insensative
 fws()
 {
   grep -rEil $1 $2
 }
 
 alias joe="cd ~/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/"
-alias c="cd /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/Phase2/Grasshopper/PracticingActiveRecord" 
+
+# current side project
+alias cs="cd /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/Phase2/Grasshopper/PracticingActiveRecord" 
+
+# make ls more intelligible
 alias ls='ls -FGh'
+
+# clear terminal history
 alias mm='history -c'
+
+# check out bash_profile
+alias bp="subl ~/.bash_profile"
+
+# install sass gem
+gem install sass &
+
+
