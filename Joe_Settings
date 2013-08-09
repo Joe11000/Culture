@@ -63,12 +63,11 @@ joe_skeleton()
 #run web application  
 runw()
 {
-  subl .                                          # open current project in sublime
-
+  subl .
   ps -A | grep -E ".*shotgun.*" | xargs kill
-  shotgun                                         # run sg()
-
-  open Google\ Chrome.app/ http://localhost:9393/ # open local host in chrome
+  shotgun config.ru &
+  sleep 3s
+  open '/Applications/Google Chrome.app/' http://localhost:9393/
 }
 
 # install sass gem if doesn't exist
