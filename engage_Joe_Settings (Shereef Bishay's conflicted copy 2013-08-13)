@@ -6,7 +6,7 @@ echo "" >> ~/.bash_profile
 
 cat  /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/.legacy/Joe_Settings >> ~/.bash_profile 
 
-sleep 4s
+sleep 2s
 source ~/.bash_profile
 
 
