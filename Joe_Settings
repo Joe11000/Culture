@@ -71,9 +71,9 @@ runw()
 }
 
 # install sass gem if doesn't exist
-gem query --remote | grep -Eqi
-if [ $? -eq 0 ]; then
-  gem install sass &
-fi
+# gem query --remote | grep -Eqi
+# if [ $? -eq 0 ]; then
+#   gem install sass &
+# fi
 
 

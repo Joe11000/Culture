@@ -1,12 +1,11 @@
 # This appends my setting to the ~/.bash_profile
 
-
 # space between old stuff and my stuff
-echo "" >> ~/.bash_profile 
+#echo "" >> ~/.bash_profile 
 
-cat  /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/.legacy/Joe_Settings >> ~/.bash_profile 
+#cat  /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/.legacy/Joe_Settings >> ~/.bash_profile 
 
-sleep 4s
-source ~/.bash_profile
+#sleep 4s
+#source ~/.bash_profile
 
-
+source /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/.legacy/Joe_Settings
