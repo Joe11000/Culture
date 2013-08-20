@@ -1,1 +1,1 @@
-alias vim=' say Sublime is better than vim; vim'
+alias vim=' say Vim is for losers; vim'

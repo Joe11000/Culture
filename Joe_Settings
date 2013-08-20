@@ -6,7 +6,7 @@ sg()
 }
 
 # Drop, Create, Migrate, and Seed your Sinatra project
-reset()
+fuckit()
 {
   bundle exec rake db:drop
   bundle exec rake db:create
@@ -64,11 +64,13 @@ joe_skeleton()
 runw()
 {
   subl .
-  ps -A | grep -E ".*shotgun.*" | xargs kill
+  killall shotgun
   shotgun config.ru &
   sleep 3s
   open '/Applications/Google Chrome.app/' http://localhost:9393/
 }
+
+alias vim=' say Vim is for losers; vim'
 
 # install sass gem if doesn't exist
 # gem query --remote | grep -Eqi
