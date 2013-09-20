@@ -1,0 +1,50 @@
+# find all processes with 'shotgun' in the name and kill them. Start up shotgun
+function sg ()
+{
+  killall shotgun
+  shotgun
+}
+
+# Drop, Create, Migrate, and Seed your Sinatra project
+function fuckit ()
+{
+  bundle exec rake db:drop    &&
+  bundle exec rake db:create  &&
+  bundle exec rake db:migrate &&
+  bundle exec rake db:seed
+}
+
+# download and setup basic sinatra skeleton
+sinatra ()
+{
+  wget "http://cl.ly/2n3D2V0R0L2f/download/sinatra_skeleton.zip"
+  unzip sinatra_skeleton.zip -d ./$@
+  rm sinatra_skeleton.zip
+  cd ./$@
+  git init
+  git add .
+  git commit -am "sinatra skeleton --b"
+}
+
+# search all files recursively starting from $2 and search for string $1. Case insensative
+function fws ()
+{
+  grep -rEil $1 $2
+}
+
+#run web application
+function runw()
+{
+  subl . &
+  killall shotgun &
+  shotgun config.ru &
+  sleep 4s
+  chrome http://localhost:9393/ &
+}
+
+# hard mm
+# clear history of current shell and remove file conatining history of all shells.
+function hmm()
+  history -c && echo "" > ~/.bash_history
+end
+

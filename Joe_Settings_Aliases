@@ -1,0 +1,24 @@
+alias subl="sublime-text"
+
+# make ls more intelligible
+alias ls='ls --color -FGh'
+
+alias co="checkout"
+
+alias rspec="rspec --color"
+
+alias be="bundle exec"
+
+# clear terminal history
+alias mm='history -c'
+
+# check out bash_profile
+alias bp="subl ~/.bash_profile"
+
+export LSCOLORS=ExExFxdxCxDxDxaccxEeEx
+
+
+#################################
+# Ubuntu Specific!!
+alias chrome="chromium-browser"
+alias open="gnome-open"
