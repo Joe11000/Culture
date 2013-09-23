@@ -1,0 +1,32 @@
+
+sg()
+{
+  killall shotgun
+  shotgun
+}
+
+fuckit()
+{
+  bundle exec rake db:drop &&  bundle exec rake db:create &&  bundle exec rake db:migrate &&  bundle exec rake db:seed
+}
+
+sinatra()
+{
+  wget "http://cl.ly/2n3D2V0R0L2f/download/sinatra_skeleton.zip"
+  unzip sinatra_skeleton.zip -d ./$@
+  rm sinatra_skeleton.zip
+  cd ./$@
+  git init
+  git add .
+  git commit -am "sinatra skeleton --b"
+}
+
+fws()
+{
+  grep -rEil $1 $2
+}
+
+alias joe="cd ~/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/"
+alias c="cd /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/Phase2/Grasshopper/PracticingActiveRecord" 
+alias ls='ls -FGh'
+alias mm='history -c && ~/.bash_history'
