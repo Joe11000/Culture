@@ -45,6 +45,8 @@ function runw()
 # hard mm
 # clear history of current shell and remove file conatining history of all shells.
 function hmm()
-  history -c && echo "" > ~/.bash_history
-end
+{
+  history -c
+  echo "" > ~/.bash_history
+}
 
