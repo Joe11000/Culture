@@ -16,6 +16,10 @@ alias co="checkout"
 # clear terminal history
 alias mm='history -c'
 
+# check out bashrc
+alias brc="subl ~/.bashrc &"
+alias sbrc="source ~/.bashrc &"
+
 # check out bash_profile
 alias bp="subl ~/.bash_profile &"
 alias sbp="source ~/.bash_profile &"
