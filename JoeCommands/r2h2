@@ -1,0 +1,10 @@
+	# Procfile
+	echo "web: bundle exec rails server -p $PORT" > Procfile
+
+	#getting repo up to heroku
+	heroku login
+	heroku create
+	git push heroku master
+	heroku open
+
+	 # help -->  https://devcenter.heroku.com/articles/getting-started-with-rails3

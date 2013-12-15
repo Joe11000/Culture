@@ -1,0 +1,77 @@
+#function r2h()
+#{
+	# create new rails app with postgreSQL database. Skip installation of Test::Unit.
+	if [ $# -lt 1 ]; then
+		exit 1
+	fi
+
+	rails _3.2.13_ new $1 -T --database=postgresql
+	cd $1
+
+	# append necessary gem information to Gemfile
+	printf "
+	group :development, :test do
+	  gem 'rspec-rails'
+	  gem 'factory_girl_rails'
+	  gem 'shoulda-matchers'
+	  gem 'better_errors'
+	  gem 'debugger'
+	end
+
+	group :test do
+	  gem 'faker'
+  	gem 'capybara'
+  	gem 'guard-rspec'
+  	gem 'launchy'
+	end
+
+	gem 'bcrypt-ruby', '~> 3.0.0'
+
+	gem 'protected_attributes'
+	" >> Gemfile
+
+
+	# Procfile
+	#echo "web: bundle exec rails server -p $PORT" > Procfile
+	bundle
+	bundle update
+	rake db:create
+
+	#RSPEC
+	rails generate rspec:install
+
+	# tracking files with git
+	git init
+	git add .
+	git commit -m "Initial Commit"
+
+	# open in sublime
+	subl .
+
+	#getting repo up to heroku
+	heroku login
+	heroku create
+	git push heroku master
+	heroku open
+
+	 # help -->  https://devcenter.heroku.com/articles/getting-started-with-rails3
+#}
+
+
+# including travis
+#
+# touch .travis.yml
+#
+# echo 	`printf "
+#deploy:
+#  provider: heroku
+#  api_key:
+#	` > .travis.yml
+#
+#
+#
+#
+#
+
+
+

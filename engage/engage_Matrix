@@ -1,0 +1,5 @@
+# This appends my setting to the ~/.bash_profile
+
+cat  ../Matrix >> ~/.bash_profile
+
+source ~/.bash_profile
