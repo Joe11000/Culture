@@ -52,6 +52,6 @@ function hmm()
 
 function setc()
 {
-  pwd > /home/joe/Coding/dbc/culture/culture/c
+  pwd > /home/joe/coding/dbc/culture/culture/c
   sbp
 }

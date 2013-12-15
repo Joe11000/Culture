@@ -17,10 +17,10 @@ alias co="checkout"
 alias mm='history -c'
 
 # check out bash_profile
-alias bp="subl ~/.bash_profile"
-alias sbp="source ~/.bash_profile"
+alias bp="subl ~/.bash_profile &"
+alias sbp="source ~/.bash_profile &"
 
-alias culture="subl ~/Coding/dbc/culture/culture/"
+alias culture="subl ~/coding/dbc/culture/culture/ &"
 
 export LSCOLORS=ExExFxdxCxDxDxaccxEeEx
 
@@ -43,7 +43,7 @@ alias TYT="chromium-browser https://www.youtube.com/user/TheYoungTurks"
 alias phm="git push heroku master"
 alias ho="heroku open"
 
-alias c="cd `cat /home/joe/Coding/dbc/culture/culture/c`"
+alias c="cd `cat /home/joe/coding/dbc/culture/culture/c`"
 
 
 alias fuckit="rake db:drop && rake db:create && rake db:migrate && rake db:seed"

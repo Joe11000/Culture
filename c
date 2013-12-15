@@ -1,1 +1,1 @@
-/home/joe/Coding/SchoolScheduleCreator
+/home/joe/coding/SchoolScheduleCreator
