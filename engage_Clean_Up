@@ -1,5 +1,0 @@
-# apply Clean_Up culture to terminal
-
-cat  /Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/JNoonan/.legacy/CleanUp >> ~/.bash_profile 
-
-source ~/.bash_profile

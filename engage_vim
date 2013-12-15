@@ -1,3 +1,0 @@
-cat vim >> ~/.bash_profile
-sleep 2s
-source ~/.bash_profile
