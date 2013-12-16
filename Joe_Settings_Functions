@@ -50,3 +50,8 @@ function hmm()
   echo "" > ~/.bash_history
 }
 
+function setc()
+{
+  pwd > /home/joe/coding/dbc/culture/culture/c
+  sbp
+}

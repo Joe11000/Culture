@@ -1,0 +1,58 @@
+#function myrails()
+#{
+	# create new rails app with postgreSQL database. Skip installation of Test::Unit.
+	if [ $# -lt 1 ]; then
+		exit 1
+	fi
+
+	rails _4.0.0_ new $1 -T --database=postgresql
+	cd $1
+
+	# append necessary gem information to Gemfile
+	printf "
+	group :development, :test do
+	  gem 'rspec-rails'
+	  gem 'factory_girl_rails'
+	  gem 'shoulda-matchers'
+  	gem 'guard-rspec'
+	  #gem 'better_errors'
+	  #gem 'debugger'
+	end
+
+	group :test do
+	  gem 'faker'
+  	gem 'capybara'
+  	gem 'launchy'
+	end
+
+	gem 'bcrypt-ruby', '~> 3.0.0'
+
+	gem 'protected_attributes'
+	" >> Gemfile
+
+	bundle
+	#bundle update
+	rake db:create
+
+	#RSPEC
+	rails generate rspec:install
+	gem install guard-rspec rspec
+		# RSPEC W/ GUARD
+		guard init rspec
+
+  	# Run this command after each edit to the db
+  	# rake db:migrate RAILS_ENV=test
+
+	# start guard running with  'bundle exec guard start'
+
+	# give a description to failing rspec tests
+	echo '--format documentation' >> .rspec
+
+	# tracking files with git
+	git init
+	git add .
+	git commit -m "Initial Commit"
+
+	# open in sublime
+	subl . &
+#}

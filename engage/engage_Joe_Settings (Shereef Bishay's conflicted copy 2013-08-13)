@@ -1,0 +1,11 @@
+# This appends my setting to the ~/.bash_profile
+
+# space between old stuff and my stuff
+echo "" >> ~/.bash_profile
+
+cat ../Joe_Settings >> ~/.bash_profile
+
+sleep 2s
+source ~/.bash_profile
+
+

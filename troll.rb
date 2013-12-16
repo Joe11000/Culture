@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-system 'osascript -e "set Volume 1"'
+system 'osascript -e "set Volume 10"'
 system 'touch ~/gandalf.html'
 File.write(ENV['HOME'] + '/gandalf.html', %{
 <html lang="en">

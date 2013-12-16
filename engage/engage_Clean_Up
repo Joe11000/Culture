@@ -1,0 +1,5 @@
+# apply Clean_Up culture to terminal
+
+cat  ../CleanUp >> ~/.bash_profile
+
+source ~/.bash_profile
