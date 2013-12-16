@@ -1,12 +1,12 @@
 # find all processes with 'shotgun' in the name and kill them. Start up shotgun
-function sg ()
+function sg()
 {
   killall shotgun
   shotgun
 }
 
 # Drop, Create, Migrate, and Seed your Sinatra project
-function fuckit ()
+function fuckit()
 {
   bundle exec rake db:drop    &&
   bundle exec rake db:create  &&
@@ -27,7 +27,7 @@ sinatra ()
 }
 
 # search all files recursively starting from $2 and search for string $1. Case insensative
-function fws ()
+function fws()
 {
   grep -rEil $1 $2
 }
