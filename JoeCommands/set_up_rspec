@@ -1,3 +1,3 @@
 rspec --init         # create spec folder and spec helper
 
-rake db:test:prepare # set up rspec somehow
+rake db:migrate RAILS_ENV=test # migrate test database
