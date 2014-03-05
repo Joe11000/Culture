@@ -11,7 +11,16 @@ function fuckit()
   bundle exec rake db:drop    &&
   bundle exec rake db:create  &&
   bundle exec rake db:migrate &&
-  bundle exec rake db:seed
+  bundle exec rake db:seed    && 
+  bundle exec rake db:test:prepare
+}
+
+function fuckits()
+{
+  bundle exec rake db:drop         &&
+  bundle exec rake db:create       &&
+  bundle exec rake db:migrate      && 
+  bundle exec rake db:test:prepare
 }
 
 # download and setup basic sinatra skeleton
@@ -52,6 +61,5 @@ function hmm()
 
 function setc()
 {
-  pwd > /home/joe/coding/dbc/culture/culture/c
-  sbp
+  pwd > /home/joe/coding/culture/c
 }

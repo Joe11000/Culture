@@ -1,7 +1,7 @@
 alias subl="sublime-text"
 
 # make ls more intelligible
-alias ls='ls --color -FGh'
+alias  ls='ls --color -FGh'
 
 alias gco="git checkout"
 alias co="checkout"
@@ -24,9 +24,15 @@ alias sbrc="source ~/.bashrc &"
 alias bp="subl ~/.bash_profile &"
 alias sbp="source ~/.bash_profile &"
 
-alias culture="subl ~/coding/dbc/culture/culture/ &"
+alias culture="subl ~/coding/culture/ &"
 
 export LSCOLORS=ExExFxdxCxDxDxaccxEeEx
+
+
+alias s="sublime-text . &"
+
+alias rc='rails c'
+alias rs="rails s"
 
 
 #################################
@@ -35,7 +41,7 @@ alias chrome="chromium-browser"
 alias open="gnome-open"
 
 # play country grammer
-alias cg="decibel-audio-player /home/joe/Music/Country\ Grammar\ \(Hot\ Shit\).mp3"
+alias cg="decibel-audio-player /home/joe/Ubuntu\ One/Country\ Grammar\ \(Hot\ Shit\).mp3"
 
 # for decibel-audio-player
 alias dr="decibel-audio-player-remote"
@@ -47,7 +53,4 @@ alias TYT="chromium-browser https://www.youtube.com/user/TheYoungTurks"
 alias phm="git push heroku master"
 alias ho="heroku open"
 
-alias c="cd `cat /home/joe/coding/dbc/culture/culture/c`"
-
-
-alias fuckit="rake db:drop && rake db:create && rake db:migrate && rake db:seed"
+alias c="cd `cat /home/joe/coding/culture/c`"
