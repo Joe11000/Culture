@@ -1,12 +1,12 @@
 # find all processes with 'shotgun' in the name and kill them. Start up shotgun
-function sg()
+sg()
 {
   killall shotgun
   shotgun
 }
 
 # Drop, Create, Migrate, and Seed your Sinatra project
-function fuckit()
+fuckit()
 {
   bundle exec rake db:drop    &&
   bundle exec rake db:create  &&
@@ -15,7 +15,7 @@ function fuckit()
   bundle exec rake db:test:prepare
 }
 
-function fuckits()
+fuckits()
 {
   bundle exec rake db:drop         &&
   bundle exec rake db:create       &&
@@ -42,7 +42,7 @@ function fws()
 }
 
 #run web application
-function runw()
+runw()
 {
   subl . &
   killall shotgun &
@@ -53,13 +53,13 @@ function runw()
 
 # hard mm
 # clear history of current shell and remove file conatining history of all shells.
-function hmm()
+hmm()
 {
   history -c
   echo "" > ~/.bash_history
 }
 
-function setc()
+setc()
 {
-  pwd > /home/joe/coding/culture/c
+  pwd > /Users/joe.noonan/projects/culture/c
 }

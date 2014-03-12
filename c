@@ -1,1 +1,1 @@
-/home/joe/coding/school_schedule_creator
+/Users/joe.noonan/projects/turnip_school_creator
