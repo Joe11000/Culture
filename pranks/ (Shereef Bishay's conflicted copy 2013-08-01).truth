@@ -1,0 +1,16 @@
+p=`pwd`
+echo $p | grep -Eiq ".*DBC-Chicago/.+"
+
+if [ $? == 0 ]
+then
+      clear
+      tput cup 15 25 
+      name=`echo $pwd | cut -d / -f 7`
+
+      echo "Clean up your crap before you leave $name" 
+      tput cup 0 0
+    osascript -e "set Volume 10"
+  say  "Clean up your crap before you leave $name" &
+
+fi
+# Users/apprentice/Dropbox/DBC-Chicago/Grasshoppers/

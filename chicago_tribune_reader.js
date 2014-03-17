@@ -22,6 +22,6 @@ $('body').css('overflow', 'scroll')
 
 
 
-# window.$$('#story-body-text').remove
+// # window.$$('#story-body-text').remove
 
-# window.dialog-overlayed
+// # window.dialog-overlayed
