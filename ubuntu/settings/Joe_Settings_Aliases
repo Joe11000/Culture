@@ -8,7 +8,6 @@ alias be="bundle exec"
 
 alias rspec="rspec --color"
 
-
 alias co="checkout"
 
 # clear terminal history
@@ -29,6 +28,7 @@ export LSCOLORS=ExExFxdxCxDxDxaccxEeEx
 alias rc='rails c'
 alias rs="rails s"
 
+
 alias c="cd `cat /Users/joe.noonan/projects/culture/c`"
 
 alias ho="heroku open"
@@ -36,26 +36,10 @@ alias ho="heroku open"
 # Watch me some TYT
 alias TYT="chromium-browser https://www.youtube.com/user/TheYoungTurks"
 
-
-#################################
-## Mac Specific
 alias work="cd /Users/joe.noonan/projects/saladbar"
 
+alias phm="git push heroku master"
 
-#################################
-# Ubuntu Specific!!
-#alias subl="sublime-text"
-#alias chrome="chromium-browser"
-#alias open="gnome-open"
+alias tag="be rspec --tag"
 
-# play country grammer
-#alias cg="decibel-audio-player /home/joe/Ubuntu\ One/Country\ Grammar\ \(Hot\ Shit\).mp3"
-
-# for decibel-audio-player
-#alias dr="decibel-audio-player-remote"
-
-
-#alias phm="git push heroku master"
-
-
-#alias c="cd `cat ~/projects/culture/c`"
+alias chrome="open /Applications/Google\ Chrome.app/ --args --enable-speech-input"

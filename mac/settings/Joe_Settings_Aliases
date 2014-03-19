@@ -36,26 +36,10 @@ alias ho="heroku open"
 # Watch me some TYT
 alias TYT="chromium-browser https://www.youtube.com/user/TheYoungTurks"
 
-
-#################################
-## Mac Specific
 alias work="cd /Users/joe.noonan/projects/saladbar"
 
-
-#################################
-# Ubuntu Specific!!
-#alias subl="sublime-text"
-#alias chrome="chromium-browser"
-#alias open="gnome-open"
-
-# play country grammer
-#alias cg="decibel-audio-player /home/joe/Ubuntu\ One/Country\ Grammar\ \(Hot\ Shit\).mp3"
-
-# for decibel-audio-player
-#alias dr="decibel-audio-player-remote"
-
+alias tag="be rspec --tag"
 
 #alias phm="git push heroku master"
-
 
 #alias c="cd `cat ~/projects/culture/c`"
