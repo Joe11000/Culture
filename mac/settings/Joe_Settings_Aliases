@@ -34,11 +34,10 @@ alias c="cd `cat /Users/joe.noonan/projects/culture/c`"
 alias ho="heroku open"
 
 # Watch me some TYT
-alias TYT="chromium-browser https://www.youtube.com/user/TheYoungTurks"
+alias TYT="/usr/bin/open -a '/Applications/Google Chrome.app' 'https://www.youtube.com/user/TheYoungTurks'"
 
 alias work="cd /Users/joe.noonan/projects/saladbar"
 
-alias tag="be rspec --tag"
 
 #alias phm="git push heroku master"
 

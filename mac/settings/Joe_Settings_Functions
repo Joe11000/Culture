@@ -1,30 +1,30 @@
 # find all processes with 'shotgun' in the name and kill them. Start up shotgun
-sg()
+function sg()
 {
   killall shotgun
   shotgun
 }
 
 # Drop, Create, Migrate, and Seed your Sinatra project
-fuckit()
+function fuckit()
 {
   bundle exec rake db:drop    &&
   bundle exec rake db:create  &&
   bundle exec rake db:migrate &&
-  bundle exec rake db:seed    && 
+  bundle exec rake db:seed    &&
   bundle exec rake db:test:prepare
 }
 
-fuckits()
+function fuckits()
 {
   bundle exec rake db:drop         &&
   bundle exec rake db:create       &&
-  bundle exec rake db:migrate      && 
+  bundle exec rake db:migrate      &&
   bundle exec rake db:test:prepare
 }
 
 # download and setup basic sinatra skeleton
-sinatra ()
+function sinatra ()
 {
   wget "http://cl.ly/2n3D2V0R0L2f/download/sinatra_skeleton.zip"
   unzip sinatra_skeleton.zip -d ./$@
@@ -42,7 +42,7 @@ function fws()
 }
 
 #run web application
-runw()
+function runw()
 {
   subl . &
   killall shotgun &
@@ -53,13 +53,23 @@ runw()
 
 # hard mm
 # clear history of current shell and remove file conatining history of all shells.
-hmm()
+function hmm()
 {
   history -c
   echo "" > ~/.bash_history
 }
 
-setc()
+function setc()
 {
   pwd > /Users/joe.noonan/projects/culture/c
+}
+
+function tag()
+{
+   be rspec --tag `echo $@ | sed 's/ / --tag /g'`
+}
+
+function tagd()
+{
+   be rspec --tag `echo $@ | sed 's/ / --tag /g'` -d
 }

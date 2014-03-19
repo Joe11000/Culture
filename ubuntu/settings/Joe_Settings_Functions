@@ -11,7 +11,7 @@ fuckit()
   bundle exec rake db:drop    &&
   bundle exec rake db:create  &&
   bundle exec rake db:migrate &&
-  bundle exec rake db:seed    && 
+  bundle exec rake db:seed    &&
   bundle exec rake db:test:prepare
 }
 
@@ -19,7 +19,7 @@ fuckits()
 {
   bundle exec rake db:drop         &&
   bundle exec rake db:create       &&
-  bundle exec rake db:migrate      && 
+  bundle exec rake db:migrate      &&
   bundle exec rake db:test:prepare
 }
 
@@ -62,4 +62,9 @@ hmm()
 setc()
 {
   pwd > /Users/joe.noonan/projects/culture/c
+}
+
+tag()
+{
+   be rspec --tag `echo $@ | sed 's/ / --tag /g'`
 }
