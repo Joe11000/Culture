@@ -1,6 +1,5 @@
 #remove crap preventing me from reading ChicagoTribune.com
 
-
 (function(){
   var newscript = document.createElement('script');
      newscript.type = 'text/javascript';

@@ -38,7 +38,4 @@ alias TYT="/usr/bin/open -a '/Applications/Google Chrome.app' 'https://www.youtu
 
 alias work="cd /Users/joe.noonan/projects/saladbar"
 
-
-#alias phm="git push heroku master"
-
-#alias c="cd `cat ~/projects/culture/c`"
+alias phm="git push heroku master"
