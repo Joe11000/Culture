@@ -68,3 +68,26 @@ tag()
 {
    be rspec --tag `echo $@ | sed 's/ / --tag /g'`
 }
+
+s()
+{
+  if [ $# -eq 0 ]; then
+    subl . &
+  else
+    subl $@ &
+  fi
+}
+
+new_fun()
+{
+   d=`date +%u`
+
+   case $d in
+     3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/
+     ;;
+     4) chrome http://www.narutoget.com/
+     ;;
+     *);;
+   esac
+}
+

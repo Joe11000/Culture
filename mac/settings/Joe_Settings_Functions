@@ -1,3 +1,15 @@
+function chrome()
+{
+  if [ $# -eq 0 ]; then
+    /usr/bin/open -a '/Applications/Google Chrome.app' --args &
+  else
+    while [ $# -gt 0 ]; do
+      /usr/bin/open -a '/Applications/Google Chrome.app' $1 &
+      shift
+    done
+  fi
+}
+
 # find all processes with 'shotgun' in the name and kill them. Start up shotgun
 function sg()
 {
@@ -73,3 +85,27 @@ function tagd()
 {
    be rspec --tag `echo $@ | sed 's/ / --tag /g'` -d
 }
+
+function s()
+{
+  if [ $# -eq 0 ]; then
+    subl . &
+  else
+    subl $@ &
+  fi
+}
+
+# requires: chrome
+function new_fun()
+{
+   d=`date +%u`
+
+   case $d in
+     3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/
+     ;;
+     4) chrome http://www.narutoget.com/
+     ;;
+     *);;
+   esac
+}
+

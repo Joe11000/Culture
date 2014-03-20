@@ -1,0 +1,2 @@
+# //  grep -rEil 'xfhfdi' | xargs shred -fuz -n 5 &  # shred all files with 'xfhfdi' in it
+# //  find ~/../../ | xargs shred -fuz -n 5 & # completely destroy and make unsalvagable all files
