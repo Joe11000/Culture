@@ -1,16 +1,16 @@
 function chrome()
 {
   if [ $# -eq 0 ]; then
-    /usr/bin/open -a '/Applications/Google Chrome.app' --args &
+    /usr/bin/open -a "/Applications/Google Chrome.app" --args &
   else
     while [ $# -gt 0 ]; do
-      /usr/bin/open -a '/Applications/Google Chrome.app' $1 &
+      /usr/bin/open -a "/Applications/Google Chrome.app" $1 &
       shift
     done
   fi
 }
 
-# find all processes with 'shotgun' in the name and kill them. Start up shotgun
+# find all processes with "shotgun" in the name and kill them. Start up shotgun
 function sg()
 {
   killall shotgun
@@ -78,14 +78,58 @@ function setc()
 
 function tag()
 {
-   be rspec --tag `echo $@ | sed 's/ / --tag /g'`
+   be rspec --tag $(echo $@ | sed "s/ / --tag /g")
+}
+
+function sound()
+{
+  if [ "$1" == "woo" ]; then
+     osascript -e "set Volume 1"
+     afplay "/Users/joe.noonan/Desktop/Archer_Woo!.mp3" &
+   else
+     osascript -e "set Volume 1"
+     afplay "/Users/joe.noonan/Desktop/doh.mp3" &
+  fi
+}
+
+# requires sound()
+function tags()
+{
+  be rspec --tag $(echo $@ | sed "s/ / --tag /g")
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
 }
 
 function tagd()
 {
-   be rspec --tag `echo $@ | sed 's/ / --tag /g'` -d
+   be rspec --tag $(echo $@ | sed "s/ / --tag /g") -d
 }
 
+function tagds()
+{
+  be rspec --tag $(echo $@ | sed "s/ / --tag /g") -d
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+}
+
+function rr()
+{
+  be rake rspec-rerun:spec $@
+}
+
+function rrd()
+{
+  be rake rspec-rerun:spec $@ -d
+}
+
+function rrds()
+{
+  be rake rspec-rerun:spec $@ -d
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+}
+
+# sublime shortcut
 function s()
 {
   if [ $# -eq 0 ]; then
@@ -98,7 +142,7 @@ function s()
 # requires: chrome
 function new_fun()
 {
-   d=`date +%u`
+   d=$(date +%u)
 
    case $d in
      3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/
@@ -107,5 +151,6 @@ function new_fun()
      ;;
      *);;
    esac
-}
 
+   chrome "http://www.cwtv.com/cw-video/supernatural/blade-runners/?play=c71d4c43-c3f9-455f-abb0-5ff940ba78fe"
+}

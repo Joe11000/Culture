@@ -1,13 +1,17 @@
+#alias cd="echo 'hi joe'; cd"
+
+alias be='bundle exec'
+
+alias bi='bundle install'
+alias bu='bundle update'
+
 # make ls more intelligible
 alias  ls='ls -FGh'
 
 alias gco="git checkout"
 alias co="checkout"
 
-alias be="bundle exec"
-
 alias rspec="rspec --color"
-
 
 alias co="checkout"
 

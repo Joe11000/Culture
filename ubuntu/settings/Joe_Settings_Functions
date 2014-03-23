@@ -1,4 +1,4 @@
-# find all processes with 'shotgun' in the name and kill them. Start up shotgun
+# find all processes with "shotgun" in the name and kill them. Start up shotgun
 sg()
 {
   killall shotgun
@@ -66,7 +66,7 @@ setc()
 
 tag()
 {
-   be rspec --tag `echo $@ | sed 's/ / --tag /g'`
+   be rspec --tag $(echo $@ | sed "s/ / --tag /g")
 }
 
 s()
@@ -80,7 +80,7 @@ s()
 
 new_fun()
 {
-   d=`date +%u`
+   d=$(date +%u)
 
    case $d in
      3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/
@@ -91,3 +91,56 @@ new_fun()
    esac
 }
 
+
+tag()
+{
+   be rspec --tag $(echo $@ | sed "s/ / --tag /g")
+}
+
+sound()
+{
+  if [ "$1" == "woo" ]; then
+     osascript -e "set Volume 1"
+     afplay "/Users/joe.noonan/Desktop/Archer_Woo!.mp3" &
+   else
+     osascript -e "set Volume 1"
+     afplay "/Users/joe.noonan/Desktop/doh.mp3" &
+  fi
+}
+
+# requires sound()
+tags()
+{
+  be rspec --tag $(echo $@ | sed "s/ / --tag /g")
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+}
+
+tagd()
+{
+   be rspec --tag $(echo $@ | sed "s/ / --tag /g") -d
+}
+
+tagds()
+{
+  be rspec --tag $(echo $@ | sed "s/ / --tag /g") -d
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+}
+
+rr()
+{
+  be rake rspec-rerun:spec $@
+}
+
+rrd()
+{
+  be rake rspec-rerun:spec $@ -d
+}
+
+rrds()
+{
+  be rake rspec-rerun:spec $@ -d
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+}
