@@ -133,6 +133,13 @@ rr()
   be rake rspec-rerun:spec $@
 }
 
+rrs()
+{
+  be rake rspec-rerun:spec $@
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+}
+
 rrd()
 {
   be rake rspec-rerun:spec $@ -d

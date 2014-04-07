@@ -1,0 +1,4 @@
+export RSPEC_RERUN_PATTERN="spec/**/**/*.feature"
+export RSPEC_RERUN_RETRY_COUNT=3
+export RSPEC_RERUN_TAGS_STRING="joe"
+#export RSPEC_RERUN_TAGS_STRING="smoke ~pend @dev"

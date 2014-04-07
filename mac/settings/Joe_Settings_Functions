@@ -86,7 +86,7 @@ function sound()
   if [ "$1" == "woo" ]; then
      osascript -e "set Volume 1"
      afplay "/Users/joe.noonan/Desktop/Archer_Woo!.mp3" &
-   else
+  elif [ "$1" == "doh" ]; then
      osascript -e "set Volume 1"
      afplay "/Users/joe.noonan/Desktop/doh.mp3" &
   fi
@@ -112,14 +112,40 @@ function tagds()
   [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
 }
 
+function pat()
+{
+  echo $RSPEC_RERUN_PATTERN
+}
+
+function set_pat()
+{
+  export RSPEC_RERUN_PATTERN="$1"
+}
+
 function rr()
 {
   be rake rspec-rerun:spec $@
 }
 
+function rrs()
+{
+  be rake rspec-rerun:spec $@
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+}
+
 function rrd()
 {
   be rake rspec-rerun:spec $@ -d
+}
+
+function rrts()
+{
+  RSPEC_RERUN_TAGS_STRING=$@
+
+  be rake rspec-rerun:spec_tags
+
+  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
 }
 
 function rrds()
@@ -145,12 +171,13 @@ function new_fun()
    d=$(date +%u)
 
    case $d in
+     2) chrome http://watchseries.lt/serie/archer
+        ;;
      3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/
-     ;;
+        chrome "http://www.cwtv.com/cw-video/supernatural/mothers-little-helper/?play=d1bf7a4c-ec18-4c62-bd8c-dae1ca4625cc"
+        ;;
      4) chrome http://www.narutoget.com/
-     ;;
+        ;;
      *);;
    esac
-
-   chrome "http://www.cwtv.com/cw-video/supernatural/blade-runners/?play=c71d4c43-c3f9-455f-abb0-5ff940ba78fe"
 }
