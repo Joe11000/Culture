@@ -80,7 +80,7 @@ var hideAllSpoilers = function()
   var proxied5 = _highlight.getHighlightsCallBack;
   _highlight.getHighlightsCallBack = function()
   {
-    var return_val5 = proxied5.apply(this, arguments);
+    var return_val5 = proxied5.apply(this, arguments);                                                                                                                                                                                                                                                                                                                                                         n
     bottom_HideScores();
     return return_val5;
   }

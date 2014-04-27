@@ -83,13 +83,18 @@ function tag()
 
 function sound()
 {
+  vol=`osascript -e 'output volume of (get volume settings)'`
+  #echo "volume : $vol"
   if [ "$1" == "woo" ]; then
      osascript -e "set Volume 1"
-     afplay "/Users/joe.noonan/Desktop/Archer_Woo!.mp3" &
+     afplay "/Users/joe.noonan/Desktop/Archer_Woo!.mp3"
   elif [ "$1" == "doh" ]; then
      osascript -e "set Volume 1"
-     afplay "/Users/joe.noonan/Desktop/doh.mp3" &
+     afplay "/Users/joe.noonan/Desktop/doh.mp3"
   fi
+  vol_back=$(echo "7 * ( $vol / 100 )" | bc -l)
+  #echo $vol_back
+  osascript -e "set Volume $vol_back"
 }
 
 # requires sound()
@@ -109,7 +114,7 @@ function tagds()
 {
   be rspec --tag $(echo $@ | sed "s/ / --tag /g") -d
 
-  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+  [[ $? = 0 ]] && `sound "woo" &` || `sound "doh" &`
 }
 
 function pat()
@@ -174,10 +179,95 @@ function new_fun()
      2) chrome http://watchseries.lt/serie/archer
         ;;
      3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/
-        chrome "http://www.cwtv.com/cw-video/supernatural/mothers-little-helper/?play=d1bf7a4c-ec18-4c62-bd8c-dae1ca4625cc"
+        chrome "http://www.cwtv.com/cw-video/supernatural/"
         ;;
      4) chrome http://www.narutoget.com/
         ;;
      *);;
    esac
+}
+
+function tags10()
+{
+  for i in `seq 1 10`; do
+    tags $@
+  done
+}
+
+function tagds10()
+{
+  for i in `seq 1 10`; do
+    tags $@ -d
+  done
+}
+
+
+function contest1()
+{
+  be rake notlb:ui:contest_1
+}
+
+function contest2()
+{
+  be rake notlb:ui:contest_2
+}
+
+function info1()
+{
+  be rake notlb:ui:info_1
+}
+
+function info2()
+{
+  be rake notlb:ui:info_2
+}
+
+function vote1()
+{
+  be rake notlb:ui:vote_1
+}
+
+function vote2()
+{
+  be rake notlb:ui:vote_2
+}
+
+function sub1()
+{
+  be rake notlb:ui:subscription_1
+}
+
+function sub2()
+{
+  be rake notlb:ui:subscription_2
+}
+
+function trivia()
+{
+  be rake notlb:ui:trivia
+}
+
+function others()
+{
+  be rake notlb:ui:others
+}
+
+
+function sub()
+{
+  echo "
+  ssh interns@elkispljob01.cloud.vibes.com
+  sudo -u splat -i
+  rails console
+  cd current
+  ./script/console
+
+  sb_alert_ui = Account.find(8)
+  to_end = sb_alert_ui.campaigns.current.by_type(CampaignType.SUBSCRIPTION.id)
+  to_end.each { |sc| sc.delete }
+
+  exit
+  exit
+  exit
+  "
 }
