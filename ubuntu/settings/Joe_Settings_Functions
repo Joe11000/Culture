@@ -163,3 +163,13 @@ rrds()
 
   [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
 }
+
+# Return T/F if regex character in $1  needs to be an escaped regex character
+regesc()
+{
+  if [ $1 = '.'  -o $1 = '|'  -o $1 = '('  -o $1 = ')'  -o $1 = '['  -o $1 = ']'  -o $1 = '{'  -o $1 = '}'  -o $1 = '+'  -o $1 = '\'  -o $1 = '^'  -o $1 = '$'  -o $1 = '*'  -o $1 = '?' ]; then
+     echo 'yes'
+   else
+     echo 'no'
+  fi
+}

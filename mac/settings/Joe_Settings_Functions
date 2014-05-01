@@ -175,16 +175,20 @@ function new_fun()
 {
    d=$(date +%u)
 
+   # 0 <-> monday ... 7 <-> sunday
    case $d in
-     2) chrome http://watchseries.lt/serie/archer
+     2) chrome http://watchseries.lt/serie/archer                                     # Archer
         ;;
-     3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/
-        chrome "http://www.cwtv.com/cw-video/supernatural/"
+     3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/  # Bleach
+        chrome "http://www.cwtv.com/cw-video/supernatural/"                           # Supernatural
         ;;
-     4) chrome http://www.narutoget.com/
+     4) chrome http://www.narutoget.com/                                              # Naruto
         ;;
      *);;
    esac
+
+   chrome http://kissanime.com/Anime/Kill-la-Kill                                    # Kill La Kill
+   chrome http://video.nhl.com/                                                      # Hockey Highlights
 }
 
 function tags10()
@@ -255,7 +259,7 @@ function others()
 
 function sub()
 {
-  echo "
+  echo '
   ssh interns@elkispljob01.cloud.vibes.com
   sudo -u splat -i
   rails console
@@ -264,10 +268,52 @@ function sub()
 
   sb_alert_ui = Account.find(8)
   to_end = sb_alert_ui.campaigns.current.by_type(CampaignType.SUBSCRIPTION.id)
+  size = to_end.length
   to_end.each { |sc| sc.delete }
+  puts "\n\n #{size} entries deleted"
+  exit
+  exit
+  exit
+  '
+}
 
-  exit
-  exit
-  exit
-  "
+# Return T/F if regex character in $1  needs to be an escaped regex character
+function reg()
+{
+  if [ $1 = '.'  -o $1 = '|'  -o $1 = '('  -o $1 = ')'  -o $1 = '['  -o $1 = ']'  -o $1 = '{'  -o $1 = '}'  -o $1 = '+'  -o $1 = '\'  -o $1 = '^'  -o $1 = '$'  -o $1 = '*'  -o $1 = '?' ]; then
+     echo 'yes'
+   else
+     echo 'no'
+  fi
+}
+
+function tagps10()
+{
+  for i in `seq 1 10`; do
+    tag $@
+
+    if [ $? -eq 0 ]; then
+      #kill $(pgrep -f osascript -e "tell application "AppName" to quit")
+      sound woo
+      quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
+    else
+      sound doh
+      break
+    fi
+  done
+}
+
+function tagcs()
+{
+  while [ true ]; do
+    tag $@
+
+    if [ $? -eq 0 ]; then
+      sound woo
+      quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
+    else
+      sound doh
+      break
+    fi
+  done
 }
