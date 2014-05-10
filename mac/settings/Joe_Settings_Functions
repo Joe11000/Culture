@@ -303,7 +303,7 @@ function tagps10()
   done
 }
 
-function tagcs()
+function tte() # Tag Till Error
 {
   while [ true ]; do
     tag $@
@@ -316,4 +316,10 @@ function tagcs()
       break
     fi
   done
+}
+
+function hd()
+{
+  heroku run rake db:migrate
+  heroku run rake db:seed
 }

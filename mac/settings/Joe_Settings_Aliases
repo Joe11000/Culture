@@ -4,9 +4,13 @@ alias be='bundle exec'
 
 alias bi='bundle install'
 alias bu='bundle update'
-
+alias rc='rails console'
 # make ls more intelligible
 alias  ls='ls -FGh'
+
+alias berc='bundle exec rails console'
+alias bers='bundle exec rails server'
+
 
 alias gco="git checkout"
 alias co="checkout"
@@ -43,3 +47,5 @@ alias TYT="/usr/bin/open -a '/Applications/Google Chrome.app' 'https://www.youtu
 alias work="cd /Users/joe.noonan/projects/saladbar"
 
 alias phm="git push heroku master"
+
+alias hr="heroku run"
