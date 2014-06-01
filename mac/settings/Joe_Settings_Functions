@@ -87,10 +87,10 @@ function sound()
   #echo "volume : $vol"
   if [ "$1" == "woo" ]; then
      osascript -e "set Volume 1"
-     afplay "/Users/joe.noonan/Desktop/Archer_Woo!.mp3"
+     afplay "/Users/joe.noonan/Desktop/Music/Sounds/Archer_Woo!.mp3"
   elif [ "$1" == "doh" ]; then
      osascript -e "set Volume 1"
-     afplay "/Users/joe.noonan/Desktop/doh.mp3"
+     afplay "/Users/joe.noonan/Desktop/Music/Sounds/doh.mp3"
   fi
   vol_back=$(echo "7 * ( $vol / 100 )" | bc -l)
   #echo $vol_back
@@ -189,6 +189,9 @@ function new_fun()
 
    chrome http://kissanime.com/Anime/Kill-la-Kill                                    # Kill La Kill
    chrome http://video.nhl.com/                                                      # Hockey Highlights
+   chrome https://www.youtube.com/user/TheYoungTurks
+
+   chrome http://www.mangaeden.com/en-directory/?title=avatar
 }
 
 function tags10()
@@ -256,25 +259,31 @@ function others()
   be rake notlb:ui:others
 }
 
+function par()
+{
+  bundle exec rake notlb:ui:user_participating
+}
+
 
 function sub()
 {
   echo '
-  ssh interns@elkispljob01.cloud.vibes.com
-  sudo -u splat -i
-  rails console
-  cd current
-  ./script/console
+    ssh interns@elkispljob01.cloud.vibes.com
+    sudo -u splat -i
+    rails console
+    cd current
+    ./script/console
 
-  sb_alert_ui = Account.find(8)
-  to_end = sb_alert_ui.campaigns.current.by_type(CampaignType.SUBSCRIPTION.id)
-  size = to_end.length
-  to_end.each { |sc| sc.delete }
-  puts "\n\n #{size} entries deleted"
-  exit
-  exit
-  exit
+    sb_alert_ui = Account.find(8)
+    to_end = sb_alert_ui.campaigns.current.by_type(CampaignType.SUBSCRIPTION.id)
+    size = to_end.length
+    to_end.each { |sc| sc.delete }
+    puts "\n\n #{size} entries deleted"
+    exit
+    exit
+    exit
   '
+  echo
 }
 
 # Return T/F if regex character in $1  needs to be an escaped regex character
@@ -309,6 +318,19 @@ function tte() # Tag Till Error
     tag $@
 
     if [ $? -eq 0 ]; then
+      quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
+    else
+      break
+    fi
+  done
+}
+
+function ttes() # Tag Till Error
+{
+  while [ true ]; do
+    tag $@
+
+    if [ $? -eq 0 ]; then
       sound woo
       quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
     else
@@ -322,4 +344,15 @@ function hd()
 {
   heroku run rake db:migrate
   heroku run rake db:seed
+}
+
+function dlna()
+{
+  /Applications/XBMC.app/
+
+}
+
+function nos()
+{
+   rm -rf "/Users/joe.noonan/projects/saladbar/tmp/screenshots"
 }
