@@ -25,6 +25,8 @@ alias rspec="rspec --color"
 
 alias co="checkout"
 
+alias pspec="DISABLE_SPRING=true be rake parallel:spec[4]"
+
 # clear terminal history
 alias mm='history -c'
 

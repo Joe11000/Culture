@@ -1,1 +1,1 @@
-/Users/joe.noonan/projects/cors_test
+/Users/joe.noonan/projects/cors-test

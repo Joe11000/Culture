@@ -175,11 +175,13 @@ function new_fun()
 {
    d=$(date +%u)
 
-   # 0 <-> monday ... 7 <-> sunday
+   # 0 = sunday ... 6 = saturday
    case $d in
+     1) chrome http://watchseries-online.eu/?s=game+of+thrones&search                 # Game Of Thrones
+        ;;
      2) chrome http://watchseries.lt/serie/archer                                     # Archer
         ;;
-     3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/  # Bleach
+     3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/  # Bleach + Naruto
         chrome "http://www.cwtv.com/cw-video/supernatural/"                           # Supernatural
         ;;
      4) chrome http://www.narutoget.com/                                              # Naruto
@@ -355,4 +357,67 @@ function dlna()
 function nos()
 {
    rm -rf "/Users/joe.noonan/projects/saladbar/tmp/screenshots"
+}
+
+
+
+function r2h()
+{
+  # create new rails app with postgreSQL database. Skip installation of Test::Unit.
+  if [ $# -lt 1 ]; then
+    exit 1
+  fi
+
+  rails new $1 -T --database=postgresql
+  cd $1
+
+  # append necessary gem information to Gemfile
+  printf "
+  group :development, :test do
+    gem 'rspec-rails'
+    gem 'factory_girl_rails'
+    gem 'shoulda-matchers'
+    gem 'better_errors'
+    gem 'debugger'
+  end
+
+  group :test do
+    gem 'faker'
+    gem 'capybara'
+    gem 'guard-rspec'
+    gem 'launchy'
+  end
+
+  gem 'bcrypt-ruby', '~> 3.0.0'
+
+  gem 'protected_attributes'
+  " >> Gemfile
+
+
+  # Procfile
+  echo "web: bundle exec rails server" > Procfile
+  bundle
+  bundle update
+  rake db:create
+
+  #RSPEC
+  rails generate rspec:install
+
+  # tracking files with git
+  git init
+  git add .
+  git commit -m "Initial Commit"
+
+  # open in sublime
+  subl .
+
+  #getting repo up to heroku
+  heroku login
+  heroku create
+  git push -u heroku master
+  heroku run rake db:create
+  heroku run rake db:migrate
+  heroku open
+
+   # help -->  https://devcenter.heroku.com/articles/getting-started-with-rails3
 }

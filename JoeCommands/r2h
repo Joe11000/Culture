@@ -1,5 +1,5 @@
-#function r2h()
-#{
+function r2h()
+{
 	# create new rails app with postgreSQL database. Skip installation of Test::Unit.
 	if [ $# -lt 1 ]; then
 		exit 1
@@ -51,7 +51,7 @@
 	#getting repo up to heroku
 	heroku login
 	heroku create
-	git push heroku master
+	git push -u heroku master
 	heroku open
 
 	 # help -->  https://devcenter.heroku.com/articles/getting-started-with-rails3
