@@ -15,7 +15,7 @@ alias bebu='bundle exec bundle update'
 
 alias gd="git diff"
 alias ga="git add"
-alias gb="git checkout -b"
+alias gb="git blame"
 alias gs="git status"
 alias gc="git commit"
 alias gco="git checkout"
