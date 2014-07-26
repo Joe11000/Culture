@@ -38,22 +38,19 @@ alias sbrc="source ~/.bashrc &"
 alias bp="subl ~/.bash_profile &"
 alias sbp="source ~/.bash_profile &"
 
-alias culture="subl /Users/joe.noonan/projects/culture/ &"
+alias culture="subl  ~/coding/culture/ &"
 
 export LSCOLORS=ExExFxdxCxDxDxaccxEeEx
 
 alias rc='rails c'
 alias rs="rails s"
 
-alias c="cd `cat /Users/joe.noonan/projects/culture/c`"
+alias c="cd `cat ~/coding/culture/mac/settings/c`"
 
 alias ho="heroku open"
 
 # Watch me some TYT
 alias TYT="/usr/bin/open -a '/Applications/Google Chrome.app' 'https://www.youtube.com/user/TheYoungTurks'"
-
-alias work="cd /Users/joe.noonan/projects/saladbar"
-alias work2="cd /Users/joe.noonan/projects/campaign-manager"
 
 alias phm="git push heroku master"
 

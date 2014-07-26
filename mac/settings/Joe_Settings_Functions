@@ -73,7 +73,7 @@ function hmm()
 
 function setc()
 {
-  pwd > /Users/joe.noonan/projects/culture/c
+  pwd > ~/coding/culture/mac/settings/c
 }
 
 function tag()
@@ -87,10 +87,10 @@ function sound()
   #echo "volume : $vol"
   if [ "$1" == "woo" ]; then
      osascript -e "set Volume 1"
-     afplay "/Users/joe.noonan/Desktop/Music/Sounds/Archer_Woo!.mp3"
+     afplay "~/Desktop/Music/Sounds/Archer_Woo!.mp3"
   elif [ "$1" == "doh" ]; then
      osascript -e "set Volume 1"
-     afplay "/Users/joe.noonan/Desktop/Music/Sounds/doh.mp3"
+     afplay "~/Desktop/Music/Sounds/doh.mp3"
   fi
   vol_back=$(echo "7 * ( $vol / 100 )" | bc -l)
   #echo $vol_back
@@ -289,77 +289,64 @@ function sub()
 }
 
 # Return T/F if regex character in $1  needs to be an escaped regex character
-function reg()
-{
-  if [ $1 = '.'  -o $1 = '|'  -o $1 = '('  -o $1 = ')'  -o $1 = '['  -o $1 = ']'  -o $1 = '{'  -o $1 = '}'  -o $1 = '+'  -o $1 = '\'  -o $1 = '^'  -o $1 = '$'  -o $1 = '*'  -o $1 = '?' ]; then
-     echo 'yes'
-   else
-     echo 'no'
-  fi
-}
+#function reg()
+#{
+#  if [ $1 = '.'  -o $1 = '|'  -o $1 = '('  -o $1 = ')'  -o $1 = '['  -o $1 = ']'  -o $1 = '{'  -o $1 = '}'  -o $1 = '+'  -o $1 = '\'  -o $1 = '^'  -o $1 = '$'  -o $1 = '*'  -o $1 = '?' ]; then
+#      echo 'yes'
+#    else
+#      echo 'no'
+#   fi
+# }
 
-function tagps10()
-{
-  for i in `seq 1 10`; do
-    tag $@
+# function tagps10()
+# {
+#   for i in `seq 1 10`; do
+#     tag $@
 
-    if [ $? -eq 0 ]; then
-      #kill $(pgrep -f osascript -e "tell application "AppName" to quit")
-      sound woo
-      quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
-    else
-      sound doh
-      break
-    fi
-  done
-}
+#     if [ $? -eq 0 ]; then
+#       #kill $(pgrep -f osascript -e "tell application "AppName" to quit")
+#       sound woo
+#       quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
+#     else
+#       sound doh
+#       break
+#     fi
+#   done
+# }
 
-function tte() # Tag Till Error
-{
-  while [ true ]; do
-    tag $@
+# function tte() # Tag Till Error
+# {
+#   while [ true ]; do
+#     tag $@
 
-    if [ $? -eq 0 ]; then
-      quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
-    else
-      break
-    fi
-  done
-}
+#     if [ $? -eq 0 ]; then
+#       quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
+#     else
+#       break
+#     fi
+#   done
+# }
 
-function ttes() # Tag Till Error
-{
-  while [ true ]; do
-    tag $@
+# function ttes() # Tag Till Error
+# {
+#   while [ true ]; do
+#     tag $@
 
-    if [ $? -eq 0 ]; then
-      sound woo
-      quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
-    else
-      sound doh
-      break
-    fi
-  done
-}
+#     if [ $? -eq 0 ]; then
+#       sound woo
+#       quit preview #  quit comes from https://www.macupdate.com/app/mac/31821/quit
+#     else
+#       sound doh
+#       break
+#     fi
+#   done
+# }
 
 function hd()
 {
   heroku run rake db:migrate
   heroku run rake db:seed
 }
-
-function dlna()
-{
-  /Applications/XBMC.app/
-
-}
-
-function nos()
-{
-   rm -rf "/Users/joe.noonan/projects/saladbar/tmp/screenshots"
-}
-
-
 
 function r2h()
 {
