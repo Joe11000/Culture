@@ -10,6 +10,7 @@
 //http://stackoverflow.com/questions/441412/is-there-a-link-to-the-latest-jquery-library-on-google-apis
 // https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js
 
+
 $('.dialog-wrapper.flexible-registration-modal').remove()
 window.setTimeout('partB',4000)
 $('#dialog-overlayed').remove()

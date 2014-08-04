@@ -1,3 +1,5 @@
 source /Users/user/coding/culture/mac/settings/bashrc
 source /Users/user/coding/culture/mac/settings/Joe_Settings_Aliases
 source /Users/user/coding/culture/mac/settings/Joe_Settings_Functions
+
+eval "$(rbenv init -)"

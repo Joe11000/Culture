@@ -1,12 +1,10 @@
-#alias cd="echo 'hi joe'; cd"
-
 alias be='bundle exec'
 
 alias bi='bundle install'
 alias bu='bundle update'
 alias rc='rails console'
-# make ls more intelligible
-alias  ls='ls -FGh'
+
+alias ls='ls -FGh' # make ls more intelligible
 
 alias berc='bundle exec rails console'
 alias bers='bundle exec rails server'
@@ -38,7 +36,7 @@ alias sbrc="source ~/.bashrc &"
 alias bp="subl ~/.bash_profile &"
 alias sbp="source ~/.bash_profile &"
 
-alias culture="subl  ~/coding/culture/ &"
+alias culture="subl ~/coding/culture/ &"
 
 export LSCOLORS=ExExFxdxCxDxDxaccxEeEx
 

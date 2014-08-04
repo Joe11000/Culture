@@ -23,16 +23,14 @@ function fuckit()
   bundle exec rake db:drop    &&
   bundle exec rake db:create  &&
   bundle exec rake db:migrate &&
-  bundle exec rake db:seed    &&
-  bundle exec rake db:test:prepare
+  bundle exec rake db:seed   # && bundle exec rake db:test:prepare
 }
 
 function fuckits()
 {
   bundle exec rake db:drop         &&
   bundle exec rake db:create       &&
-  bundle exec rake db:migrate      &&
-  bundle exec rake db:test:prepare
+  bundle exec rake db:migrate #     && bundle exec rake db:test:prepare
 }
 
 # download and setup basic sinatra skeleton
@@ -50,7 +48,7 @@ function sinatra ()
 # search all files recursively starting from $2 and search for string $1. Case insensative
 function fws()
 {
-  grep -rEil $1 $2
+  grep -liEr $1 $2
 }
 
 #run web application
@@ -98,67 +96,57 @@ function sound()
 }
 
 # requires sound()
-function tags()
-{
-  be rspec --tag $(echo $@ | sed "s/ / --tag /g")
+# function tags()
+# {
+#   be rspec --tag $(echo $@ | sed "s/ / --tag /g")
 
-  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
-}
+#   [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+# }
 
 function tagd()
 {
    be rspec --tag $(echo $@ | sed "s/ / --tag /g") -d
 }
 
-function tagds()
-{
-  be rspec --tag $(echo $@ | sed "s/ / --tag /g") -d
+# function tagds()
+# {
+#   be rspec --tag $(echo $@ | sed "s/ / --tag /g") -d
 
-  [[ $? = 0 ]] && `sound "woo" &` || `sound "doh" &`
-}
+#   [[ $? = 0 ]] && `sound "woo" &` || `sound "doh" &`
+# }
 
-function pat()
-{
-  echo $RSPEC_RERUN_PATTERN
-}
+# function rr()
+# {
+#   be rake rspec-rerun:spec $@
+# }
 
-function set_pat()
-{
-  export RSPEC_RERUN_PATTERN="$1"
-}
+# function rrs()
+# {
+#   be rake rspec-rerun:spec $@
 
-function rr()
-{
-  be rake rspec-rerun:spec $@
-}
+#   [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+# }
 
-function rrs()
-{
-  be rake rspec-rerun:spec $@
+# function rrd()
+# {
+#   be rake rspec-rerun:spec $@ -d
+# }
 
-  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
-}
+# function rrts()
+# {
+#   RSPEC_RERUN_TAGS_STRING=$@
 
-function rrd()
-{
-  be rake rspec-rerun:spec $@ -d
-}
+#   be rake rspec-rerun:spec_tags
 
-function rrts()
-{
-  RSPEC_RERUN_TAGS_STRING=$@
+#   [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+# }
 
-  be rake rspec-rerun:spec_tags
+# function rrds()
+# {
+#   be rake rspec-rerun:spec $@ -d
 
-  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
-}
-
-function rrds()
-{
-  be rake rspec-rerun:spec $@ -d
-
-  [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
-}
+#   [[ $? = 0 ]] && $(sound "woo" &) || $(sound "doh" &)
+# }
 
 # sublime shortcut
 function s()
@@ -186,11 +174,14 @@ function new_fun()
         ;;
      4) chrome http://www.narutoget.com/                                              # Naruto
         ;;
+     5) chrome http://www.gogoanime.com/category/avatar-the-legend-of-korra           # Korra
+        chrome http://www.youtube.com/watch?v=uokw09IbsHs
+        ;;
      *);;
    esac
 
-   chrome http://kissanime.com/Anime/Kill-la-Kill                                    # Kill La Kill
-   chrome http://video.nhl.com/                                                      # Hockey Highlights
+   #chrome http://kissanime.com/Anime/Kill-la-Kill                                    # Kill La Kill
+   # chrome http://video.nhl.com/                                                      # Hockey Highlights
    chrome https://www.youtube.com/user/TheYoungTurks
 
    chrome http://www.mangaeden.com/en-directory/?title=avatar
@@ -211,60 +202,10 @@ function tagds10()
 }
 
 
-function contest1()
-{
-  be rake notlb:ui:contest_1
-}
-
-function contest2()
-{
-  be rake notlb:ui:contest_2
-}
-
-function info1()
-{
-  be rake notlb:ui:info_1
-}
-
-function info2()
-{
-  be rake notlb:ui:info_2
-}
-
-function vote1()
-{
-  be rake notlb:ui:vote_1
-}
-
-function vote2()
-{
-  be rake notlb:ui:vote_2
-}
-
-function sub1()
-{
-  be rake notlb:ui:subscription_1
-}
-
-function sub2()
-{
-  be rake notlb:ui:subscription_2
-}
-
-function trivia()
-{
-  be rake notlb:ui:trivia
-}
-
-function others()
-{
-  be rake notlb:ui:others
-}
-
-function par()
-{
-  bundle exec rake notlb:ui:user_participating
-}
+# function contest1()
+# {
+#   be rake notlb:ui:contest_1
+# }
 
 
 function sub()

@@ -9,8 +9,6 @@ function joe_skeleton()
    git commit -m "Project Setup Initial Commit"     # perform first commit
 }
 
-
-
 # install sass gem if doesn't exist
 # gem query --remote | grep -Eqi
 # if [ $? -eq 0 ]; then
