@@ -23,14 +23,16 @@ function fuckit()
   bundle exec rake db:drop    &&
   bundle exec rake db:create  &&
   bundle exec rake db:migrate &&
-  bundle exec rake db:seed   # && bundle exec rake db:test:prepare
+  bundle exec rake db:seed    &&
+  bundle exec rake db:migrate RAILS_ENV=test
 }
 
 function fuckits()
 {
   bundle exec rake db:drop         &&
   bundle exec rake db:create       &&
-  bundle exec rake db:migrate #     && bundle exec rake db:test:prepare
+  bundle exec rake db:migrate      &&
+  bundle exec rake db:migrate RAILS_ENV=test
 }
 
 # download and setup basic sinatra skeleton
