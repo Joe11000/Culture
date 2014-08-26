@@ -17,6 +17,11 @@ function sg()
   shotgun
 }
 
+function addgems()
+{
+   cat /Users/user/Dropbox/commonly_used_libraries >> Gemfile
+}
+
 # Drop, Create, Migrate, and Seed your Sinatra project
 function fuckit()
 {

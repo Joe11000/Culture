@@ -29,12 +29,12 @@ alias pspec="DISABLE_SPRING=true be rake parallel:spec[4]"
 alias mm='history -c'
 
 # check out bashrc
-alias brc="subl ~/.bashrc &"
-alias sbrc="source ~/.bashrc &"
+alias brc="subl ~/coding/culture/mac/settings/bashrc &"
+alias sbrc="source ~/coding/culture/mac/settings/bashrc &"
 
 # check out bash_profile
-alias bp="subl ~/.bash_profile &"
-alias sbp="source ~/.bash_profile &"
+alias bp="subl ~/coding/culture/mac/settings/bash_profile &"
+alias sbp="source ~/coding/culture/mac/settings/bash_profile &"
 
 alias culture="subl ~/coding/culture/ &"
 
