@@ -15,14 +15,14 @@ $('.dialog-wrapper.flexible-registration-modal').remove()
 $('#dialog-overlayed').remove()
 $('body').css({'overflow': 'scroll', 'height': screen.height})
 
-//scrolling help -> http://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily
 
+
+
+
+//scrolling help -> http://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily
  // close....but won't scroll
 // $$('.default_wide.trb_meteringService_container')[0].remove()
 // $$('#dialog-overlayed')[0].remove()
 
 // $$('body')[0].style.overflow-y = 'scroll';
 // $$('body')[0].style.height = screen.height;
-
-
-// window.location = '/app/campaigns/end_now' + /\/(\d+)$/.exec($$('#campaigns > div:nth-child(2) > table > tbody > tr:nth-child(2) > td:nth-child(2) > a')[0].href)[0]
