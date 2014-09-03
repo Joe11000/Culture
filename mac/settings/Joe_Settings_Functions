@@ -22,7 +22,7 @@ function addgems()
    cat /Users/user/Dropbox/commonly_used_libraries >> Gemfile
 }
 
-# Drop, Create, Migrate, and Seed your Sinatra project
+# Drop, Create, Migrate, and Seed your ruby web framework project
 function fuckit()
 {
   bundle exec rake db:drop    &&

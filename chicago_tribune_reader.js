@@ -12,11 +12,8 @@
 
 
 $('.dialog-wrapper.flexible-registration-modal').remove()
-window.setTimeout('partB',4000)
 $('#dialog-overlayed').remove()
-
-$('body').css('overflow', 'scroll')
-         .css('height', screen.height)
+$('body').css({'overflow': 'scroll', 'height': screen.height})
 
 //scrolling help -> http://stackoverflow.com/questions/4770025/how-to-disable-scrolling-temporarily
 

@@ -3,8 +3,8 @@ alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
 alias rc='rails console'
-
 alias ls='ls -FGh' # make ls more intelligible
+
 
 alias berc='bundle exec rails console'
 alias bers='bundle exec rails server'
