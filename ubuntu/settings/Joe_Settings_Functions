@@ -12,7 +12,7 @@ fuckit()
   bundle exec rake db:create  &&
   bundle exec rake db:migrate &&
   bundle exec rake db:seed    &&
-  bundle exec rake db:test:prepare
+  bundle exec rake db:migrate RAILS_ENV=test
 }
 
 fuckits()
@@ -20,7 +20,12 @@ fuckits()
   bundle exec rake db:drop         &&
   bundle exec rake db:create       &&
   bundle exec rake db:migrate      &&
-  bundle exec rake db:test:prepare
+  bundle exec rake db:migrate RAILS_ENV=test
+}
+
+function addgems()
+{
+   cat /Users/user/Dropbox/coding/gems >> Gemfile
 }
 
 # download and setup basic sinatra skeleton
@@ -82,14 +87,30 @@ new_fun()
 {
    d=$(date +%u)
 
+   # 0 = sunday ... 6 = saturday
    case $d in
-     3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/
-     ;;
-     4) chrome http://www.narutoget.com/
-     ;;
+     1) chrome http://watchseries-online.eu/?s=game+of+thrones&search                 # Game Of Thrones
+        ;;
+     2) chrome http://watchseries.lt/serie/archer                                     # Archer
+        ;;
+     3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/  # Bleach + Naruto
+        chrome "http://www.cwtv.com/cw-video/supernatural/"                           # Supernatural
+        ;;
+     4) chrome http://www.narutoget.com/                                              # Naruto
+        ;;
+     5) chrome http://www.gogoanime.com/category/avatar-the-legend-of-korra           # Korra
+        chrome http://www.youtube.com/watch?v=uokw09IbsHs
+        ;;
      *);;
    esac
+
+   #chrome http://kissanime.com/Anime/Kill-la-Kill                                    # Kill La Kill
+   # chrome http://video.nhl.com/                                                      # Hockey Highlights
+   chrome https://www.youtube.com/user/TheYoungTurks
+
+   chrome http://www.mangaeden.com/en-directory/?title=avatar
 }
+
 
 
 tag()

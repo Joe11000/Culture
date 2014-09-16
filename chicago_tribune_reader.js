@@ -12,7 +12,7 @@
 
 
 $('.dialog-wrapper.flexible-registration-modal').remove()
-$('#dialog-overlayed').remove()
+$('#dialog-overlayed').remove();
 $('body').css({'overflow': 'scroll', 'height': screen.height})
 
 

@@ -17,8 +17,8 @@ alias gb="git branch"
 alias gs="git status"
 alias gc="git commit"
 alias gco="git checkout"
-alias co="checkout"
-
+alias gg="git log --graph --decorate --all --pretty=oneline"
+alias gems="s /Users/user/Dropbox/coding/gems"
 alias rspec="rspec --color"
 
 alias co="checkout"

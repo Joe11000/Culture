@@ -19,8 +19,15 @@ function sg()
 
 function addgems()
 {
-   cat /Users/user/Dropbox/commonly_used_libraries >> Gemfile
+   cat /Users/user/Dropbox/coding/gems >> Gemfile
 }
+
+function loadingpage()
+{
+  rails g controller welcome wip
+}
+
+
 
 # Drop, Create, Migrate, and Seed your ruby web framework project
 function fuckit()
@@ -41,7 +48,7 @@ function fuckits()
 }
 
 # download and setup basic sinatra skeleton
-function sinatra ()
+function sinatra()
 {
   wget "http://cl.ly/2n3D2V0R0L2f/download/sinatra_skeleton.zip"
   unzip sinatra_skeleton.zip -d ./$@
