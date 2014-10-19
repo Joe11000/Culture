@@ -27,6 +27,33 @@ function loadingpage()
   rails g controller welcome wip
 }
 
+#function bs_setup()
+#{
+
+#rails g scaffold product name price:decimal --skip-stylesheets
+
+ # rails generate bootstrap:install --no-coffeescript
+  # rails generate bootstrap:install static
+
+#  rails g scaffold product
+#  rails g bootstrap:install
+
+#  //= require twitter/bootstrap
+
+
+#  rails new store
+#rails g scaffold product name price:decimal --skip-stylesheets
+#rake db:migrate
+#rails g bootstrap:install
+#rails g bootstrap:themed products -f
+#}
+
+function trib()
+{
+  echo  "\$('.dialog-wrapper.flexible-registration-modal').remove();"
+  echo  "\$('#dialog-overlayed').remove();"
+  echo  "\$('body').css({'overflow': 'scroll', 'height': screen.height});"
+}
 
 
 # Drop, Create, Migrate, and Seed your ruby web framework project
@@ -180,13 +207,16 @@ function new_fun()
    # 0 = sunday ... 6 = saturday
    case $d in
      1) chrome http://watchseries-online.eu/?s=game+of+thrones&search                 # Game Of Thrones
+        chrome http://avasdemon.com/                                                  # Avas Demon
+        chrome https://www.youtube.com/channel/UC3XTzVzaHQEd30rQbuvCtTQ               # Last Week Tonight
         ;;
      2) chrome http://watchseries.lt/serie/archer                                     # Archer
         ;;
      3) chrome http://www.manymanga.com/N/Naruto/ http://www.narutomanga.org/bleach/  # Bleach + Naruto
         chrome "http://www.cwtv.com/cw-video/supernatural/"                           # Supernatural
         ;;
-     4) chrome http://www.narutoget.com/                                              # Naruto
+     4) chrome http://www.narutoget.com/                                               # Naruto
+        chrome http://avasdemon.com/
         ;;
      5) chrome http://www.gogoanime.com/category/avatar-the-legend-of-korra           # Korra
         chrome http://www.youtube.com/watch?v=uokw09IbsHs
@@ -194,11 +224,14 @@ function new_fun()
      *);;
    esac
 
-   #chrome http://kissanime.com/Anime/Kill-la-Kill                                    # Kill La Kill
+   #chrome http://kissanime.com/Anime/Kill-la-Kill                                     # Kill La Kill
    # chrome http://video.nhl.com/                                                      # Hockey Highlights
+   chrome http://mitch-the-plaid.tumblr.com/                                           # Demon GirlFriend
    chrome https://www.youtube.com/user/TheYoungTurks
 
    chrome http://www.mangaeden.com/en-directory/?title=avatar
+
+   chrome http://www.zebragirl.net/?date=2000-06-30                                    # zebra girl
 }
 
 function tags10()

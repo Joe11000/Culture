@@ -1,3 +1,4 @@
+
 var top_ScoresCover = function()
 {
   // top of the screen scores
@@ -17,10 +18,10 @@ var top_ScoresCover = function()
     if(element.innerHTML)
       element.innerHTML = "GAME ENDED";
   });
+  $('#hdrBoard .hoverState .bsc div').each(function(){ this.innerHTML = "GAME ENDED" });
 };
 
-$('#hdrBoard .hoverState .bsc div').each(function(){ this.innerHTML = "GAME ENDED" });
-};
+
 
 var bottom_HideScores = function()
 {
@@ -58,9 +59,8 @@ var hideAllSpoilers = function()
   middleRight_HideFeatureGameScore();
 };
 
-(function()
-{
-  hideAllSpoilers();
+// $(function()
+// {
 
   // Any updates received (for entire duration of person visiting site) for the top of the screen will be covered.
   var proxied1 = loadScoreboard;
@@ -87,4 +87,7 @@ var hideAllSpoilers = function()
     bottom_HideScores();
     return return_val3;
   }
-})();
+
+  hideAllSpoilers();
+// });
+

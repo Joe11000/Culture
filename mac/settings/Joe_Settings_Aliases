@@ -4,7 +4,7 @@ alias bi='bundle install'
 alias bu='bundle update'
 alias rc='rails console'
 alias ls='ls -FGh' # make ls more intelligible
-
+alias rs_kill="kill -9 $(lsof -i tcp:3000 -t)"
 
 alias berc='bundle exec rails console'
 alias bers='bundle exec rails server'
