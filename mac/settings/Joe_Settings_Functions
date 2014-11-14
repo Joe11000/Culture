@@ -51,14 +51,21 @@ function loadingpage()
 function trib()
 {
   echo  "\$('.dialog-wrapper.flexible-registration-modal').remove();"
-  echo  "\$('#dialog-overlayed').remove();"
+  echo  "\$('#reg-overlay').remove();"
   echo  "\$('body').css({'overflow': 'scroll', 'height': screen.height});"
+
 }
 
 
 # Drop, Create, Migrate, and Seed your ruby web framework project
 function fuckit()
 {
+#  if [ $1 == "" -o  $1 == d* ]; then
+#    e="RAILS_ENV=Production"
+#  else
+##    e="RAILS_ENV=Development"
+#  fi
+
   bundle exec rake db:drop    &&
   bundle exec rake db:create  &&
   bundle exec rake db:migrate &&

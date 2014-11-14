@@ -4,3 +4,10 @@ source /Users/user/coding/culture/mac/settings/Joe_Settings_Functions
 source /Users/user/coding/culture/mac/settings/env_variables
 
 eval "$(rbenv init -)"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+export SECRET_KEY_BASE="cf449a5e201e896150fa2efe014d5896b27518dbe3bc503970d1d3d0eb22f9e361fd53274aa4811a0bd05f5b5225d00296949a9a719ab7718b707e7ad44bcbcf"
+
+
+export BALANCED_SECRET="ak-prod-2vG5yZbzoJOH036xBBD9Sf9CGPizYk8k2"

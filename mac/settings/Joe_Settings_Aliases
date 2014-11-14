@@ -25,6 +25,9 @@ alias co="checkout"
 
 alias pspec="DISABLE_SPRING=true be rake parallel:spec[4]"
 
+alias jresume="open ~/Dropbox/Resume/Most\ Update/With\ Chris/"
+alias jquestions="open https://docs.google.com/document/d/1YdHEMusacmk00MJPxr60FWNdqM-eRoSBQczUL95aGs8/edit"
+alias jquestions2="open /Users/user/Dropbox/Resume/InterviewQuestionsTemplate.pdf"
 # clear terminal history
 alias mm='history -c'
 

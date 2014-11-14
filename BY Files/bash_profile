@@ -8,4 +8,3 @@ export LSCOLORS=ExGxFxdxCxDxDxaccxaeex
 export PATH="/usr/local/bin:$PATH"
 
 alias ls='ls -FG'
-source ~/Dropbox/DBC-Chicago/Squirrels/Dmitri\ Rakhuba/things/culture.sh

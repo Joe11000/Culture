@@ -3,5 +3,13 @@
   { "keys": ["alt+down"], "command": "swap_line_down" },
 
   { "keys": ["super+up"], "command": "select_lines", "args": {"forward": false} },
-  { "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} }
+  { "keys": ["super+down"], "command": "select_lines", "args": {"forward": true} },
+
+  { "keys": ["command+."], "command": "erb", "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "text.html.ruby, text.haml, source.yaml, source.css, source.scss, source.js, source.coffee" }
+    ]
+  },
+
+  { "keys": ["ctrl+shift+o"], "command": "prompt_open_folder" }
 ]
