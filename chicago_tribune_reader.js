@@ -4,7 +4,7 @@
   var newscript = document.createElement('script');
      newscript.type = 'text/javascript';
      newscript.async = true;
-     newscript.src = 'http://code.jquery.com/jquery-latest.min.js';
+     newscript.src = 'https://code.jquery.com/jquery-latest.min.js';
   (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);
 })();
 //http://stackoverflow.com/questions/441412/is-there-a-link-to-the-latest-jquery-library-on-google-apis
@@ -26,3 +26,35 @@ $('body').css({'overflow': 'scroll', 'height': screen.height})
 
 // $$('body')[0].style.overflow-y = 'scroll';
 // $$('body')[0].style.height = screen.height;
+
+
+
+
+(function(){
+
+  function getTrollNamesFromDom() {
+    names = document.getElementById('live-comments-input-field').innerHTML.split(' ');
+
+    // document.getElementById('all-comments')
+    return ['Joe Noonan', '24']
+  }
+
+  function createCssWithTrollNames() {
+    'h1 { background: red; }'
+  }
+  var css = createCssWithTrollNames(),
+      head = document.head || document.getElementsByTagName('head')[0],
+      style = document.createElement('style');
+
+  style.type = 'text/css';
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+
+  head.appendChild(style);
+
+
+})();
+#live-comments-input-field
