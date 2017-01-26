@@ -1,11 +1,14 @@
+alias nosleep='pmset noidle'
 alias be='bundle exec'
-
+alias pg_problem='rm /usr/local/var/postgres/postmaster.pid'
 alias bi='bundle install'
 alias bu='bundle update'
 alias rc='rails console'
 alias ls='ls -FGh' # make ls more intelligible
 alias rs_kill="kill -9 $(lsof -i tcp:3000 -t)"
 
+alias r4='cd ~/coding/ruby/rails/wip/rails4'
+alias r5='cd ~/coding/ruby/rails/wip/rails5'
 alias berc='bundle exec rails console'
 alias bers='bundle exec rails server'
 alias bebi='bundle exec bundle install'
@@ -32,21 +35,21 @@ alias jquestions2="open /Users/user/Dropbox/Resume/InterviewQuestionsTemplate.pd
 alias mm='history -c'
 
 # check out bashrc
-alias brc="subl ~/coding/culture/mac/settings/bashrc &"
-alias sbrc="source ~/coding/culture/mac/settings/bashrc &"
+alias brc="subl ~/Dropbox/coding/coding/culture/mac/settings/bashrc &"
+alias sbrc="source ~/Dropbox/coding/coding/culture/mac/settings/bashrc &"
 
 # check out bash_profile
-alias bp="subl ~/coding/culture/mac/settings/bash_profile &"
-alias sbp="source ~/coding/culture/mac/settings/bash_profile &"
+alias bp="subl ~/Dropbox/coding/coding/culture/mac/settings/bash_profile &"
+alias sbp="source ~/.bash_profile"
 
-alias culture="subl ~/coding/culture/ &"
+alias culture="subl ~/Dropbox/coding/coding/culture/ &"
 
 export LSCOLORS=ExExFxdxCxDxDxaccxEeEx
 
 alias rc='rails c'
 alias rs="rails s"
 
-alias c="cd `cat ~/coding/culture/mac/settings/c`"
+alias c="cd `cat ~/Dropbox/coding/coding/culture/mac/settings/c`"
 
 alias ho="heroku open"
 
@@ -56,3 +59,9 @@ alias TYT="/usr/bin/open -a '/Applications/Google Chrome.app' 'https://www.youtu
 alias phm="git push heroku master"
 
 alias hr="heroku run"
+
+alias folders='ls -d */'
+
+alias filetree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
+
+alias chrome_dev="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome -psn_0_57358 --flag-switches-begin --enable-devtools-experiments --allow-file-access-from-files --flag-switches-end"
