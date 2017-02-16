@@ -99,7 +99,7 @@ function fws()
 #run web application
 function runw()
 {
-  subl . &
+  sublime . &
   killall shotgun &
   shotgun config.ru &
   sleep 4s
@@ -116,9 +116,8 @@ function hmm()
 
 function setc()
 {
-  echo '"'$(pwd)'"' >> ~/Dropbox/coding/coding/culture/mac/settings/c
-
-
+  echo '"'$(pwd)'"' > ~/Dropbox/coding/coding/culture/mac/settings/c
+  source ~/.bash_profile
 }
 
 function tag()
@@ -199,9 +198,9 @@ function tagd()
 function s()
 {
   if [ $# -eq 0 ]; then
-    subl . &
+    sublime . &
   else
-    subl $@ &
+    sublime $@ &
   fi
 }
 
@@ -390,7 +389,7 @@ function r2h()
   git commit -m "Initial Commit"
 
   # open in sublime
-  subl .
+  sublime .
 
   #getting repo up to heroku
   heroku login

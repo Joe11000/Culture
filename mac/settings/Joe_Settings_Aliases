@@ -35,14 +35,14 @@ alias jquestions2="open /Users/user/Dropbox/Resume/InterviewQuestionsTemplate.pd
 alias mm='history -c'
 
 # check out bashrc
-alias brc="subl ~/Dropbox/coding/coding/culture/mac/settings/bashrc &"
+alias brc="sublime ~/Dropbox/coding/coding/culture/mac/settings/bashrc &"
 alias sbrc="source ~/Dropbox/coding/coding/culture/mac/settings/bashrc &"
 
 # check out bash_profile
-alias bp="subl ~/Dropbox/coding/coding/culture/mac/settings/bash_profile &"
+alias bp="sublime ~/Dropbox/coding/coding/culture/mac/settings/bash_profile &"
 alias sbp="source ~/.bash_profile"
 
-alias culture="subl ~/Dropbox/coding/coding/culture/ &"
+alias culture="sublime ~/Dropbox/coding/coding/culture/ &"
 
 export LSCOLORS=ExExFxdxCxDxDxaccxEeEx
 

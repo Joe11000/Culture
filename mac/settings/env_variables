@@ -3,7 +3,5 @@ export RSPEC_RERUN_RETRY_COUNT=3
 export RSPEC_RERUN_TAGS_STRING="joe"
 #export RSPEC_RERUN_TAGS_STRING="smoke ~pend @dev"
 
-
-
 # bundle open jquery-rails  <-- bundle open opens gems in an editor
 export EDITOR="/usr/local/bin/subl"
