@@ -1,0 +1,5 @@
+export VISUAL=vim; crontab -e
+* * * * * say 'Bad Joe Is Best Joe'  <--- Paste into new vim file
+
+--> Save and quit vim <--
+

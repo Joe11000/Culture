@@ -65,3 +65,5 @@ alias folders='ls -d */'
 alias filetree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
 
 alias chrome_dev="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome -psn_0_57358 --flag-switches-begin --enable-devtools-experiments --allow-file-access-from-files --flag-switches-end"
+
+alias tel='cd ~/coding/ruby/rails/wip/rails5/telestrations'
